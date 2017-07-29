@@ -10,4 +10,7 @@
     name="delaya73/android_kernel_oneplus_msm8996"
     revision="hybris-13.0" />
   <project path="device/oppo/common" name="sultanxda/android_device_oppo_common" revision="cm-13.0" />
+  <project path="rpm/" name="delaya73/droid-hal-oneplus3" revision="master" />
+  <project path="hybris/droid-configs" name="delaya73/droid-config-oneplus3" revision="master" />
+  <project path="hybris/droid-hal-version-oneplus3" name="delaya73/droid-hal-version-oneplus3" revision="master" />
 </manifest>
