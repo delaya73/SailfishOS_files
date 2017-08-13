@@ -1,0 +1,23 @@
+--- origin/build_packages.sh 2017-08-13 07:17:28.784947050 +0000
++++ build_packages.sh   2017-08-13 12:20:59.958693966 +0000
+@@ -136,13 +136,16 @@
+ buildmw libhybris || die
+ fi
+ buildmw "https://github.com/mer-hybris/pulseaudio-modules-droid.git" rpm/pulseaudio-modules-droid.spec || die
+-buildmw "https://github.com/nemomobile/mce-plugin-libhybris.git" || die
+-buildmw ngfd-plugin-droid-vibrator || die
+-buildmw qt5-feedback-haptics-droid-vibrator || die
++# buildmw "https://github.com/nemomobile/mce-plugin-libhybris.git" || die
++buildmw "https://github.com/kimmoli/mce-plugin-libhybris.git" || die
++# buildmw ngfd-plugin-droid-vibrator || die
++# buildmw qt5-feedback-haptics-droid-vibrator || die
++buildmw "https://git.merproject.org/mer-core/qt-mobility-haptics-ffmemless.git" rpm/qt5-feedback-haptics-ffmemless.spec || die
+ buildmw qt5-qpa-hwcomposer-plugin || die
+ buildmw "https://git.merproject.org/mer-core/qtscenegraph-adaptation.git" rpm/qtscenegraph-adaptation-droid.spec || die
+ buildmw "https://git.merproject.org/mer-core/sensorfw.git" rpm/sensorfw-qt5-hybris.spec || die
+-buildmw geoclue-providers-hybris jb36857 || die
++# buildmw geoclue-providers-hybris jb36857 || die
++buildmw "https://github.com/delaya73/geoclue-providers-hybris.git" || die
+ # build kf5bluezqt-bluez4 if not yet provided by Sailfish OS itself
+ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper se kf5bluezqt-bluez4 > /dev/null
+ ret=$?
