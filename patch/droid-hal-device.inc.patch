@@ -1,0 +1,22 @@
+--- origin/droid-hal-device.inc      2017-08-13 13:32:21.172641173 +0500
++++ droid-hal-device.inc        2017-08-13 14:06:45.194366164 +0500
+@@ -424,6 +424,7 @@
+ # remove the creation of /tmp to prevent wrong permissons
+ sed -i -e '/^[[:space:]]*mkdir[[:space:]]\/tmp[[:space:]]*/s/^/# Removed during droid-hal-device build : /' $RPM_BUILD_ROOT/*rc
+
++cp -a %{android_root}/out/target/product/%{device}/system/etc/. $RPM_BUILD_ROOT/etc
+ cp -a %{android_root}/out/target/product/%{device}/system/{bin,lib} $RPM_BUILD_ROOT%{_libexecdir}/droid-hybris/system/.
+ %if 0%{?droid_target_aarch64:1}
+ cp -a %{android_root}/out/target/product/%{device}/system/lib64 $RPM_BUILD_ROOT%{_libexecdir}/droid-hybris/system/.
+@@ -689,6 +690,11 @@
+ /default.prop
+ # Disabling v4l.rules
+ %{_sysconfdir}/udev/rules.d/60-persistent-v4l.rules
++/file_contexts.bin
++/etc/init/*
++/d
++/selinux_version
++/service_contexts
+
+ %files devel
+ %defattr(644,root,root,-)
