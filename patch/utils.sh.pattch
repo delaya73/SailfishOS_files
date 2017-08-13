@@ -1,0 +1,18 @@
+--- origin/util.sh   2017-08-13 15:13:09.012263356 +0500
++++ dhd/helpers/util.sh 2017-08-13 15:19:19.899366623 +0500
+@@ -150,8 +150,13 @@
+         fi
+
+         if [ "$GIT_URL" = "$PKG" ]; then
+-            GIT_URL=https://github.com/mer-hybris/$PKG.git
+-            minfo "No git url specified, assuming $GIT_URL"
++          if [ "$PKG" == "libhybris" ]; then
++              GIT_URL=https://github.com/delaya73/$PKG.git
++              minfo "No git url specified, assuming $GIT_URL"
++           else 
++              GIT_URL=https://github.com/mer-hybris/$PKG.git
++              minfo "No git url specified, assuming $GIT_URL"
++           fi
+         fi
+
+         pushd "$ANDROID_ROOT/hybris/mw" > /dev/null || die
