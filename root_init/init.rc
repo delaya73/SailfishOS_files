@@ -475,7 +475,8 @@ on post-fs-data
     mkdir /data/cache/backup_stage 0700 system system
     mkdir /data/cache/backup 0700 system system
 
-    init_user0
+    # Edit (disable) for SFOS
+    #init_user0
 
     # Reload policy from /data/security if present.
     setprop selinux.reload_policy 1
