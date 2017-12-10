@@ -26,7 +26,8 @@ on early-init
     restorecon /adb_keys
 
     # Shouldn't be necessary, but sdcard won't start without it. http://b/22568628.
-    mkdir /mnt 0775 root system
+    # Disable for SFOS
+    #mkdir /mnt 0775 root system
 
     # Set the security context of /postinstall if present.
     restorecon /postinstall
