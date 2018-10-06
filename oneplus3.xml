@@ -8,5 +8,5 @@
   <project path="hybris/droid-configs" name="delaya73/droid-config-oneplus3" revision="master" />
   <project path="hybris/droid-hal-version-oneplus3" name="delaya73/droid-hal-version-oneplus3" revision="master" />
 
-  <project name="delaya73/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-14.1" />
+  <project name="delaya73/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-14.1_my" />
 </manifest>
